@@ -60,12 +60,12 @@ while len(selected_plugin_type) == 0:
     # Check if only one type of plugin was found, ask user if they would like to select this type
     if len(matching_plugin_types) == 1:
         select_type = str(input(
-            "\nThe only matching type for the specified input is " + matching_plugin_types[0] + ". \nDo you want to look at " +
-            matching_types[0] + " plugins? Enter y for yes and n for no\n")).lower()
+            "\nThe only matching type for the specified input is " + matching_plugin_types[0] + ". \nQuieres mirarlo en " +
+            matching_types[0] + " plugins? Aplasta s para si y n para no\n")).lower()
         # After finding plugin type write code for retrieving plugin data here
-        if select_type == 'y':
+        if select_type == 's':
             selected_plugin_type = matching_plugin_types[0]
-            print("You selected " + matching_plugin_types[0] + " plugins.")
+            print("Seleccionaste " + matching_plugin_types[0] + " plugins.")
             plugin_list_head = my_plugin_data_list.get_head_node()
             while plugin_list_head.get_next_node() is not None:
                 sublist_head = plugin_list_head.get_value().get_head_node()
@@ -76,14 +76,14 @@ while len(selected_plugin_type) == 0:
                 plugin_list_head = plugin_list_head.get_next_node() 
                 
         else:
-            print("Invalid input. Please enter y or n.")
+            print("Entrada no válida. Por favor aplasta s o n.")
 
     # Ask user if they would like to search for other types of plugins
     search_other = str(input(
-        "\nWould you like to search for other types of plugins? Enter y for yes and n for no\n")).lower()
-    if search_other == 'y':
+        "\nQuieres buscar otro tipo de plugins? Aplasta s para si o n para no\n")).lower()
+    if search_other == 's':
         selected_plugin_type = ""
     elif search_other == 'n':
-        print("Thank you for using the plugin recommendation system!")
+        print("Gracias por usar el sistema de recomendacion de plugins!")
         break
     
